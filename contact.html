@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+    <title>首页</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="nav-box">
+        <span>个人主页</span>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="project.html">奖项展示</a></li>
+            <li><a href="#" class="on">联系我</a></li>
+        </ul>
+    </div>
+</header>
+<!-- 导航结束 -->
+<!-- banner开始 -->
+<div class="connect_banner">联系我</div>
+<!-- banner结束 -->
+<!-- 个人介绍开始 -->
+<div class="introduce">
+    <div class="introduce-tit">联系方式</div>
+    <div class="introduce-main">
+        <div class="left">
+            <img src="./img/code.jpg" class="code" alt="" srcset=""/>
+        </div>
+        <div class="right">
+            <p>电话：13192052005</p>
+            <p>邮箱：2499618293@qq.com</p>
+            <p>QQ：2499618293</p>
+            <p>微信：131920520005</p>
+        </div>
+
+    </div>
+    <form action="#" class="myform">
+        <div class="inp-box">
+            <input type="text" class="inp" name="" id="" placeholder="姓名">
+            <input type="text" class="inp" name="" id="" placeholder="电话号码">
+        </div>
+        <div class="inp-box">
+            <textarea class="msg" name="message" id="message" placeholder="给我留言......"></textarea>
+        </div>
+        <br>
+        <p style="margin-left: 20px;font-size: 14px" id="char-count">还能输入150个字</p>
+        <button class="btn" type="submit">提交</button>
+    </form>
+    <div class="foot-box">
+        Copyright © 2022.Company name All rights reversed.
+    </div>
+</div>
+</body>
+<script>
+    var charCount = document.getElementById("char-count");
+    var msg = document.getElementById("message")
+
+    msg.oninput = function(){
+        var remanent = 150 - msg.value.length;
+        charCount.textContent = "还能输入"+ remanent + "个字";
+        if(remanent<0){
+            msg.value = msg.value.substr(0,150);
+            charCount.textContent = "还能输入0个字";
+        }
+    }
+</script>
+</html>
